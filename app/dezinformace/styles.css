@@ -7,8 +7,4 @@
     .header-footer {
         @apply font-bold bg-blue-500 text-white py-10 px-6
     }
-
-    .row-image {
-        @apply flex-1 relative object-contain
-    }
 }
