@@ -8,7 +8,6 @@ import "./styles.css";
 import RowImage from "../ui/dezinformace/row-image";
 import ClickListItem from "../ui/dezinformace/click-list-item";
 import { useState } from "react";
-import clsx from "clsx";
 
 const lexend_exa = Lexend_Exa({ subsets: ["latin"], display: "swap" });
 
