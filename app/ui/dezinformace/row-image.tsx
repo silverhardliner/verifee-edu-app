@@ -16,13 +16,13 @@ export default function RowImage({
   return (
     <div className="flex-1 relative object-contain flex flex-col items-center px-4">
       <p className="text-center text-xl">{content.title}</p>
-      <div className="relative w-full h-44">
+      <div className="relative w-1/3 h-44">
         <Image src={bubble} alt={content.alt} fill />
         <div className="absolute inset-14 flex items-center justify-center">
           <p className="text-center text-sm text-black">{content.bubbleText}</p>
         </div>
       </div>
-      <div className="relative w-full h-96 mt-[-80px]">
+      <div className="relative w-1/3 h-96 mt-[-80px]">
         <Image src={content.img} alt={content.alt} fill />
       </div>
       <p className="text-center text-lg italic">{content.detail}</p>

@@ -1,13 +1,20 @@
+"use client";
+
 import { Lexend_Exa } from "next/font/google";
 import img_a from "@/public/images/1.0.a.PNG";
 import img_b from "@/public/images/1.0.b.PNG";
 import img_c from "@/public/images/1.0.c.PNG";
 import "./styles.css";
 import RowImage from "../ui/dezinformace/row-image";
+import ClickListItem from "../ui/dezinformace/click-list-item";
+import { useState } from "react";
+import clsx from "clsx";
 
 const lexend_exa = Lexend_Exa({ subsets: ["latin"], display: "swap" });
 
 export default function Page() {
+  const [diplayedImage, setDisplayedImage] = useState(0);
+
   const image_a = {
     img: img_a,
     alt: "img_a",
@@ -38,7 +45,36 @@ export default function Page() {
       "Byl jsem u natáčení toho filmu a mám nejen nelichotivou fotku hlavní herečky, ale ještě k tomu nějaké nahrávky z produkce. Ukážu ti to!",
   };
 
-  const images = [image_a, image_b, image_c];
+  const images = [image_b, image_a, image_c];
+
+  const listItemDez = (
+    <div>
+      <b>Dezinformace: </b>nepravdivé zprávy šířené se zlým záměrem
+      <div>(deepfakes, konspirační teorie, klasické fake news)</div>
+    </div>
+  );
+
+  const listItemMis = (
+    <div>
+      <b>Misinformace: </b>nepravdivé zprávy šířené bez zlého záměru
+      <div>
+        (často vznikají nezáměrnou chybou, třeba chybným datem či výkladem dat
+        nebo nepochopením satiry)
+      </div>
+    </div>
+  );
+
+  const listItemMal = (
+    <div>
+      <b>Malinformace: </b>pravdivé zprávy šířené se zlým záměrem
+      <div>
+        (často osobní info, klasicky sdílení cizích fotografií nebo trapných
+        videí, ale i jiné)
+      </div>
+    </div>
+  );
+
+  const listItems = [listItemDez, listItemMis, listItemMal];
 
   return (
     <div>
@@ -51,25 +87,17 @@ export default function Page() {
         nebo zkreslených zpráv. Informační poruchy dělíme do tří kategorií podle
         pravdivosti a záměru, se kterým jsou šířeny:
       </p>
-      <ul className="list-disc pl-16">
-        <li>
-          <b>Dezinformace: </b>nepravdivé zprávy šířené se zlým záměrem
-          <div>(deepfakes, konspirační teorie, klasické fake news)</div>
-        </li>
-        <li>
-          <b>Misinformace: </b>nepravdivé zprávy šířené bez zlého záměru
-          <div>
-            (často vznikají nezáměrnou chybou, třeba chybným datem či výkladem
-            dat nebo nepochopením satiry)
-          </div>
-        </li>
-        <li>
-          <b>Malinformace: </b>pravdivé zprávy šířené se zlým záměrem
-          <div>
-            (často osobní info, klasicky sdílení cizích fotografií nebo trapných
-            videí, ale i jiné)
-          </div>
-        </li>
+      <ul>
+        {listItems.map((item, index) => {
+          return (
+            <ClickListItem
+              displayedImage={diplayedImage}
+              setDisplayedImage={setDisplayedImage}
+              itemIndex={index}
+              content={item}
+            />
+          );
+        })}
       </ul>
       <p>
         Podívej se na následující scénář. Tři přátelé, Míša, Mája a Marek,
@@ -79,9 +107,7 @@ export default function Page() {
         tlačítko Pokračovat se posuň v úkolu dál.
       </p>
       <div className="border-solid border rounded-lg border-black my-10 flex w-full p-4">
-        {images.map((image, id) => {
-          return <RowImage content={image} key={id} />;
-        })}
+        <RowImage content={images[diplayedImage]} />
       </div>
       <p>
         Ačkoli se často setkáte se všemi třemi typy informačních poruch, nás
