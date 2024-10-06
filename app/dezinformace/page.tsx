@@ -94,6 +94,7 @@ export default function Page() {
               setDisplayedImage={setDisplayedImage}
               itemIndex={index}
               content={item}
+              key={index}
             />
           );
         })}
