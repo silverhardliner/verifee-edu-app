@@ -1,16 +1,17 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
 import "./globals.css";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
+import { Kumbh_Sans } from "next/font/google";
+import { Open_Sans } from "next/font/google";
+
+const kumbh_sans = Kumbh_Sans({
+  subsets: ["latin"],
+  display: "swap",
 });
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
+
+const open_sans = Open_Sans({
+  subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -25,10 +26,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+      <body>
+          <div className={`header-footer mb-7 ${open_sans.className}`}>
+            VERIFEE EDUCATION
+          </div>
+          <div className="px-4 sm:px-8 md:px-20 lg:px-36">{children}</div>
+          <div className={`header-footer mt-7 ${open_sans.className}`}>
+          VERIFEE EDUCATION
+        </div>
       </body>
     </html>
   );

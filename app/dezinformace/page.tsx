@@ -4,7 +4,6 @@ import { Lexend_Exa } from "next/font/google";
 import img_a from "@/public/images/1.0.a.PNG";
 import img_b from "@/public/images/1.0.b.PNG";
 import img_c from "@/public/images/1.0.c.PNG";
-import "./styles.css";
 import RowImage from "../ui/dezinformace/row-image";
 import ClickListItem from "../ui/dezinformace/click-list-item";
 import { useState } from "react";
