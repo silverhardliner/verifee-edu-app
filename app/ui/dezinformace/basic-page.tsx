@@ -20,7 +20,7 @@ export default function BasicPage({
     <div className={lexend_exa.className}>
       <div className={`text-6xl mb-4 font-bold`}>{title}</div>
       <p className={`${kumbh_sans.className} text-xl my-4`}>{info}</p>
-      <div className="text-2xl font-bold">Úkol</div>    
+      <div className="text-2xl font-bold">Úkol Splň</div>    
       <p className={`${kumbh_sans.className} text-xl my-4`}>{task}</p>
       {interactive}
       <div className="flex justify-between mt-8">
