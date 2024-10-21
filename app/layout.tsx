@@ -1,13 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
-import { Kumbh_Sans } from "next/font/google";
 import { Open_Sans } from "next/font/google";
-
-const kumbh_sans = Kumbh_Sans({
-  subsets: ["latin"],
-  display: "swap",
-});
 
 const open_sans = Open_Sans({
   subsets: ["latin"],
