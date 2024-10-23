@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import "./globals.css";
+import React from "react";
 
 import { Open_Sans } from "next/font/google";
 

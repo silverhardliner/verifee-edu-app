@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Lexend_Exa } from "next/font/google";
+import React from "react";
 
 const lexend_exa = Lexend_Exa({ subsets: ["latin"], display: "swap" });
 

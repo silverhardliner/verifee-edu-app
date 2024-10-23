@@ -1,6 +1,7 @@
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import Image from "next/image";
 import bubble from "@/public/images/mluvena.PNG";
+import React from "react";
 
 // bubble div 
 // <div className="relative w-full sm:w-3/4 md:w-2/3 lg:w-1/2 xl:w-1/3 h-44">
