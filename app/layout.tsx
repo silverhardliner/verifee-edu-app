@@ -21,8 +21,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-          <div className={`header-footer mb-7 ${open_sans.className}`}>
-            VERIFEE EDUCATION
+          <div className={`header-footer mb-7 ${open_sans.className} flex justify-between items-center`}>
+            <span>VERIFEE EDUCATION</span>
+            <a href="/" className="text-white px-4 py-2 rounded-md hover:bg-blue-600 transition duration-200 ease-in-out">Rozcestník</a>
           </div>
           <div className="px-4 sm:px-8 md:px-20 lg:px-36">{children}</div>
           <div className={`header-footer mt-7 ${open_sans.className}`}>
