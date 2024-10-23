@@ -4,14 +4,18 @@ import { Lexend_Exa } from "next/font/google";
 import img_a from "@/public/images/1.0.a.PNG";
 import img_b from "@/public/images/1.0.b.PNG";
 import img_c from "@/public/images/1.0.c.PNG";
-import RowImage from "../ui/dezinformace/row-image";
-import ClickListItem from "../ui/dezinformace/click-list-item";
+import RowImage from "@/app/ui/dezinformace/row-image";
+import ClickListItem from "@/app/ui/dezinformace/click-list-item";
 import { useState } from "react";
+import Sources from "@/app/ui/basic-components/sources";
+import exercises from "@/app/data/exercises";
 
 const lexend_exa = Lexend_Exa({ subsets: ["latin"], display: "swap" });
 
 export default function Page() {
   const [diplayedImage, setDisplayedImage] = useState(0);
+
+  const exercise = exercises["dezinformace"];
 
   const image_a = {
     img: img_a,
@@ -128,6 +132,7 @@ export default function Page() {
         představíme několik základních pojmů, které s dezinformacemi souvisí a
         možná jste se s nimi již setkali.
       </p>
+      <Sources sources={exercise.sources} />
     </div>
   );
 }

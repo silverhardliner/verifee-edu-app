@@ -8,7 +8,7 @@ import {
 } from "@xyflow/react";
 import "@xyflow/react/dist/style.css";
 import CustomNode from "./custom-node";
-import { truths, conspiracies } from "./truths-conspiracies";
+import { truths, conspiracies } from "@/app/data/truths-conspiracies";
 
 interface Item {
   text: string;

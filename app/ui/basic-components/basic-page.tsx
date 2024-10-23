@@ -1,11 +1,11 @@
 "use client";
 
 // Import necessary fonts and components
+import React from "react";
 import { Lexend_Exa } from "next/font/google";
 import { Kumbh_Sans } from "next/font/google";
-import React, { useState } from "react";
-import Link from "next/link";
-import exercises from "../data/exercises";
+import exercises from "../../data/exercises";
+import Sources from "./sources";
 
 // Initialize fonts
 const lexend_exa = Lexend_Exa({ subsets: ["latin"], display: "swap" });
@@ -19,9 +19,6 @@ export default function BasicPage({
 }) {
   // Get the exercise data
   const exercise = exercises[exercise_name as keyof typeof exercises];
-  
-  // State for toggling sources visibility
-  const [showSources, setShowSources] = useState(false);
 
   return (
     <div className={lexend_exa.className}>
@@ -39,28 +36,7 @@ export default function BasicPage({
       {exercise.interactive}
 
       {/* Sources section */}
-      <div className="mt-8">
-        <div className={`text-2xl font-bold mb-4`}>
-          <span className="cursor-pointer" onClick={() => setShowSources(!showSources)}>Zdroje</span>{" "}
-          {showSources ? "▲" : "▼"}
-        </div>
-        {showSources && (
-          <ul className={`${kumbh_sans.className} list-disc pl-5`}>
-            {exercise.sources.map((source) => (
-              <li key={source.id} className="mb-2">
-                <Link
-                  href={source.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-600 hover:underline"
-                >
-                  {source.text}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        )}
-      </div>
+      <Sources sources={exercise.sources} />
 
       {/* Navigation buttons */}
       <div className="flex justify-between mt-8">
