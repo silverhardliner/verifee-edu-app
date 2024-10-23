@@ -8,6 +8,11 @@ import {
 } from "@xyflow/react";
 import "@xyflow/react/dist/style.css";
 
+interface Item {
+  text: string;
+  id: number;
+}
+
 const ConnectColumns: React.FC = () => {
   const [isClient, setIsClient] = useState(false);
 
@@ -87,7 +92,7 @@ const ConnectColumns: React.FC = () => {
     zIndex: 1,
   };
 
-  const createNode = (item: any, index: number, isConspiracy: boolean) => ({
+  const createNode = (item: Item, index: number, isConspiracy: boolean) => ({
     id: `${isConspiracy ? "conspiracy" : "truth"}-${item.id}`,
     type: "default",
     data: { label: item.text },
@@ -109,7 +114,7 @@ const ConnectColumns: React.FC = () => {
     ),
   ];
 
-  const edges: Edge[] = shuffledTruths.map((truth, index) => ({
+  const edges: Edge[] = shuffledTruths.map((truth) => ({
     id: `edge-${truth.id}`,
     source: `truth-${truth.id}`,
     target: `conspiracy-${truth.id}`,

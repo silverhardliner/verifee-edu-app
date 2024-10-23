@@ -1,4 +1,6 @@
+import React from "react";
 import ConnectColumns from "@/app/ui/konspiracni-teorie/connect-columns";
+
 
 const exercises = {
   "konspiracni-teorie": {

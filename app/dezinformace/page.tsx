@@ -1,5 +1,5 @@
 "use client";
-
+import React from "react";
 import { Lexend_Exa } from "next/font/google";
 import img_a from "@/public/images/1.0.a.PNG";
 import img_b from "@/public/images/1.0.b.PNG";
