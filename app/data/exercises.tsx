@@ -1,8 +1,8 @@
 import React from "react";
-import ConnectColumns from "@/app/ui/konspiracni-teorie/connect-columns";
+import ConnectColumns from "@/app/ui/konspiracni-teorie/connectColumns";
 
 const exercises = {
-  dezinformace: {
+  "dezinformace": {
     id: 10,
     title: "Dezinformace",
     path: "/dezinformace",

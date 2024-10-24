@@ -6,6 +6,8 @@ import { Lexend_Exa } from "next/font/google";
 import { Kumbh_Sans } from "next/font/google";
 import exercises from "../../data/exercises";
 import Sources from "./sources";
+import ProgressBar from "./progressBar";
+import NavigationButtons from "./navigationButtons";
 
 // Initialize fonts
 const lexend_exa = Lexend_Exa({ subsets: ["latin"], display: "swap" });
@@ -35,18 +37,14 @@ export default function BasicPage({
       {/* Interactive component */}
       {exercise.interactive}
 
+      {/* Progress bar */}
+      <ProgressBar/>
+
       {/* Sources section */}
       <Sources sources={exercise.sources} />
 
       {/* Navigation buttons */}
-      <div className="flex justify-between mt-8">
-        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-48">
-          Zpět
-        </button>
-        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-48">
-          Další
-        </button>
-      </div>
+      <NavigationButtons />
     </div>
   );
 }

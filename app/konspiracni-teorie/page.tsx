@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import BasicPage from "@/app/ui/basic-components/basic-page";
+import BasicPage from "@/app/ui/basic-components/basicPage"
 import { usePathname } from 'next/navigation'
 
 export default function Page() {

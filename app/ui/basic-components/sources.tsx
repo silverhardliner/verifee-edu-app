@@ -20,10 +20,14 @@ const Sources: React.FC<SourcesProps> = ({ sources }) => {
   return (
     <div className="mt-8">
       <div className="text-2xl font-bold mb-4">
-        <span className="cursor-pointer" onClick={() => setShowSources(!showSources)}>
+        <span 
+          className="cursor-pointer hover:text-blue-700 transition-colors duration-200"
+          onClick={() => setShowSources(!showSources)}
+        >
           Zdroje
-        </span>{" "}
+        {" "}
         {showSources ? "▲" : "▼"}
+        </span>
       </div>
       {showSources && (
         <ul className={`${kumbh_sans.className} list-disc pl-5`}>
